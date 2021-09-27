@@ -16,27 +16,26 @@
       })
       let canvas
       const addRect = (item) => {
-        console.log(item.data.left)
+        console.log(item.left)
         let rect = new fabric.Rect({
-          left: item.data.left,
-          top: item.data.top,
-          width: item.data.width,
-          height: item.data.height,
-          fill: item.data.fill,
-          angle: item.data.angle,
-          padding: item.data.padding,
-          stroke: item.data.stroke, // 边框颜色
-          strokeWidth: item.data.strokeWidth, // 边框宽度
+          left: item.left,
+          top: item.top,
+          width: item.width,
+          height: item.height,
+          fill: item.fill,
+          angle: item.angle,
+          padding: item.padding,
+          stroke: item.stroke, // 边框颜色
+          strokeWidth: item.strokeWidth, // 边框宽度
         })
         return rect
       }
-      const addText =  (item) =>{
-        console.log('ytext', item)
-        let text = new fabric.Textbox(item.text, {
-          left: item.data.left, // 左上角位置
-          top: item.data.top, // 左上角位置
-          fontSize: item.data.fontSize,
-          fill: item.data.color, // 字体颜色
+      const addText =  (value, item) =>{
+        let text = new fabric.Textbox(value, {
+          left: item.left, // 左上角位置
+          top: item.top, // 左上角位置
+          fontSize: item.fontSize,
+          fill: item.color, // 字体颜色
           target: false,
         })
         return text
@@ -63,11 +62,11 @@
             })
             break
             case 'Text':
-              canvas.add(addText(item))
+              canvas.add(addText(item.text, item.data))
               console.log(canvas)
               break
             case 'Rect':
-              canvas.add(addRect(item))
+              canvas.add(addRect(item.data))
               console.log(canvas)
               break
           }
