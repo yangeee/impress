@@ -1,0 +1,188 @@
+[{
+  "trackingType": "",
+  "type": "Lottie",
+  "fileType": 10,
+  "resourceId": "09df2d1e-f582-41d9-a661-eb9935978cf9",
+  "zIndex": 0,
+  "category": "",
+  "position": {
+    "x": 255.05,
+    "y": 298.4,
+    "width": 262.48,
+    "height": 698.07,
+    "rotation": 0,
+    "opacity": 1,
+    "isFlipped": true
+  },
+  "startTime": 3,
+  "enterEffect": {
+    "type": "LeftIn",
+    "duration": 0.5,
+    "direction": "",
+    "easing": 1,
+    "hand": null,
+    "writehand": null
+  },
+  "stayEffect": {
+    "type": "None",
+    "duration": 0.5,
+    "animationGraphs": null,
+    "attachAnim": null,
+    "hand": null
+  },
+  "exitEffect": {
+    "type": "None",
+    "duration": 0,
+    "direction": "",
+    "easing": 1,
+    "hand": null
+  },
+  "filter": {
+    "blur": 0,
+    "brightness": 1,
+    "contrast": 1,
+    "saturate": 1,
+    "grayscale": 0,
+    "hueRotate": 0,
+    "invert": 0,
+    "sepia": 0
+  },
+  "boxShadow": null,
+  "dropShadow": null,
+  "bgColor": "",
+  "border": null,
+  "groupId": false,
+  "url": "https://resources.laihua.com/2019-4-18/4a9ff41d-c96c-4a11-aa65-9ff3530058a6.json",
+  "isLoop": true,
+  "numberOfLoops": 5
+}, {
+  "trackingType": "",
+  "type": "Image",
+  "fileType": 3,
+  "resourceId": "3fa30366-26d7-48c6-95f2-0f5d72480eb5",
+  "zIndex": 1,
+  "category": "",
+  "position": {
+    "x": 476.46,
+    "y": 165.84,
+    "width": 414.66,
+    "height": 414.66,
+    "rotation": 0,
+    "opacity": 1,
+    "isFlipped": false
+  },
+  "startTime": 4.5,
+  "enterEffect": {
+    "type": "FadeIn",
+    "duration": 0.5,
+    "direction": "",
+    "easing": 1,
+    "hand": null,
+    "writehand": null
+  },
+  "stayEffect": {
+    "type": "None",
+    "duration": 5,
+    "animationGraphs": null,
+    "attachAnim": null,
+    "hand": null
+  },
+  "exitEffect": {
+    "type": "None",
+    "duration": 0,
+    "direction": "",
+    "easing": 1,
+    "hand": null
+  },
+  "filter": {
+    "blur": 0,
+    "brightness": 1,
+    "contrast": 1,
+    "saturate": 1,
+    "grayscale": 0,
+    "hueRotate": 0,
+    "invert": 0,
+    "sepia": 0
+  },
+  "boxShadow": null,
+  "dropShadow": null,
+  "bgColor": "",
+  "border": null,
+  "groupId": false,
+  "url": "https://resources.laihua.com/2020-4-14/7b9a4ece-d0e5-466a-8fde-d9362c8cc887.png",
+  "cropType": "",
+  "cropData": null
+}, {
+  "trackingType": "",
+  "type": "Text",
+  "fileType": 15,
+  "zIndex": 2,
+  "category": "",
+  "position": {
+    "x": 443.79,
+    "y": 294.09,
+    "width": 480,
+    "height": 102,
+    "rotation": 0,
+    "opacity": 1,
+    "isFlipped": false
+  },
+  "startTime": 4.5,
+  "enterEffect": {
+    "type": "Type",
+    "duration": 0.5,
+    "direction": "",
+    "easing": 1,
+    "hand": null,
+    "writehand": null
+  },
+  "stayEffect": {
+    "type": "None",
+    "duration": 3,
+    "animationGraphs": null,
+    "attachAnim": null,
+    "hand": null
+  },
+  "exitEffect": {
+    "type": "None",
+    "duration": 0,
+    "direction": "",
+    "easing": 1,
+    "hand": null
+  },
+  "filter": {
+    "blur": 0,
+    "brightness": 1,
+    "contrast": 1,
+    "saturate": 1,
+    "grayscale": 0,
+    "hueRotate": 0,
+    "invert": 0,
+    "sepia": 0
+  },
+  "boxShadow": null,
+  "dropShadow": null,
+  "bgColor": "",
+  "border": null,
+  "groupId": false,
+  "templateFree": false,
+  "artType": "",
+  "text": "百万医疗保险\n全家共享保障",
+  "font": {
+    "color": "#303233",
+    "fontSize": 51,
+    "fontFamilyUrl": "2018-5-16/1526467728442.TTF",
+    "fontStretch": "normal",
+    "fontWeight": "normal",
+    "fontStyle": "normal",
+    "textDecoration": "none",
+    "textAlign": "center",
+    "wordBreak": "break-word",
+    "fontFamily": "2018-5-16/1526467728442.TTF",
+    "writingMode": "inherit",
+    "transform": "scale(0.8541666666666667)"
+  },
+  "characterSpacing": 0,
+  "lineSpacing": 1,
+  "versionAnyway": "Horizontal"
+}]
