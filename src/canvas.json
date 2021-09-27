@@ -31,6 +31,30 @@
             "stroke": "green",
             "strokeWidth": 4
           }
+        },
+        {
+          "render": "Image",
+          "url": "https://img0.baidu.com/it/u=1290099081,682602414&fm=26&fmt=auto",
+          "data": {
+            "left": 240,
+            "top": 300,
+            "width": 150,
+            "height": 100,
+            "angle": 0,
+            "padding": 10
+          }
+        },
+        {
+          "render": "Text",
+          "text": "大大的眼睛 更大的疑惑",
+          "data": {
+            "left": 440,
+            "top": 340,
+            "width": 250,
+            "height": 100,
+            "fontSize": 24,
+            "color": "red"
+          }
         }
       ]
     }

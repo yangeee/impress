@@ -30,6 +30,17 @@
         })
         return rect
       }
+      const addText =  (item) =>{
+        console.log('ytext', item)
+        let text = new fabric.Textbox(item.text, {
+          left: item.data.left, // 左上角位置
+          top: item.data.top, // 左上角位置
+          fontSize: item.data.fontSize,
+          fill: item.data.color, // 字体颜色
+          target: false,
+        })
+        return text
+      }
       let items = json.scenes[0].elements
       function canvasInit() {
         canvas = new fabric.Canvas('canvas')
@@ -40,21 +51,20 @@
             fabric.Image.fromURL(item.url, (img, err) => {
               if(!err) {
                 img.set({
-                  left: item.position.x, // 左上角位置
-                  top: item.position.y, // 左上角位置
-                  width: item.position.width,
-                  height: item.position.height,
+                  left: item.data.left, // 左上角位置
+                  top: item.data.top, // 左上角位置
+                  width: item.data.width,
+                  height: item.data.height,
                   target: false,
                   crossOrigin: 'anonymous' // 使用的图片跨域时，配置此参数，有时会失效
                 })
-                console.log(item.position.x)
                 canvas.add(img)
               }
             })
             break
             case 'Text':
               canvas.add(addText(item))
-              // text.enterEditing() 
+              console.log(canvas)
               break
             case 'Rect':
               canvas.add(addRect(item))
@@ -100,16 +110,7 @@
       })
       }
       
-      const addText =  (item) =>{
-        let text = new fabric.Textbox(item.text, {
-          left: item.position.x, // 左上角位置
-          top: item.position.y, // 左上角位置
-          fontSize: item.font.fontSize,
-          fill: item.font.color, // 字体颜色
-          target: false,
-        })
-        return text
-      }
+      
       return {
         data
       }
