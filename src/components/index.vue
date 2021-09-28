@@ -53,31 +53,7 @@
         await canvasBgInit(canvas)
         fabric.Object.prototype.transparentCorners = false
         items.forEach(item => {
-          switch (item.render) {
-            case 'Image':
-              fabric.Image.fromURL(item.url, (img, err) => {
-                if(!err) {
-                  img.set({
-                    left: item.data.left, // 左上角位置
-                    top: item.data.top, // 左上角位置
-                    width: item.data.width,
-                    height: item.data.height,
-                    target: item.data.target,
-                    crossOrigin: 'anonymous' // 使用的图片跨域时，配置此参数，有时会失效
-                  })
-                  canvas.add(img)
-                }
-              })
-              break
-            case 'Text':
-              canvas.add(addText(item.text, item.data))
-              console.log(canvas)
-              break
-            case 'Rect':
-              canvas.add(addRect(item.data))
-              console.log(canvas)
-              break
-          }
+          switchRender(item)
         })
         observeBoolean('hasControls')
         observeBoolean('hasBorders');
@@ -106,19 +82,54 @@
       onMounted(() => {
         canvasInit(0)
       })
-      
+      const resetScene = () => {
+        let objArr = canvas.getObjects()
+        for(let i=1; i<objArr.length;i++) {
+          let element = objArr[i]
+          canvas.remove(element)
+        }
+      }
+      function switchRender(item){
+        switch (item.render) {
+          case 'Image':
+            fabric.Image.fromURL(item.url, (img, err) => {
+              if(!err) {
+                img.set({
+                  left: item.data.left, // 左上角位置
+                  top: item.data.top, // 左上角位置
+                  width: item.data.width,
+                  height: item.data.height,
+                  target: item.data.target,
+                  crossOrigin: 'anonymous' // 使用的图片跨域时，配置此参数，有时会失效
+                })
+                canvas.add(img)
+              }
+            })
+            break
+          case 'Text':
+            canvas.add(addText(item.text, item.data))
+            console.log(canvas)
+            break
+          case 'Rect':
+            canvas.add(addRect(item.data))
+            console.log(canvas)
+            break
+        }
+      }
+      const renderScene = (targetIndex) => {
+        let objArr = json.scenes[targetIndex].elements
+        for(let i=0; i<objArr.length;i++) {
+          switchRender(objArr[i])
+        }
+      }
       const findObject = (x, y) => {
         let objArr = canvas.getObjects()
           for(let i=1; i<objArr.length;i++){
             let element = objArr[i]
             if(element.left < x && element.left + element.width > x && element.top < y && element.top + element.height > y && element.target !== -1) {
-              const index = element.target
-              console.log(element.target,'target')
-              canvas.clear()
-              setTimeout(() => {
-                canvasInit(index)
-              }, 200)
-              // canvas.remove(element)
+              const targetIndex = element.target
+              resetScene()
+              renderScene(targetIndex)
             }
           }
       }
