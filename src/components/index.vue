@@ -47,9 +47,9 @@
         }
         canvas.renderAll();
       }
-      let items = json.scenes[0].elements
-      async function canvasInit(item) {
-        canvas = item ? item : new fabric.Canvas('canvas')
+      async function canvasInit(index) {        
+        let items = json.scenes[index].elements
+        canvas = new fabric.Canvas('canvas')
         await canvasBgInit(canvas)
         fabric.Object.prototype.transparentCorners = false
         items.forEach(item => {
@@ -96,6 +96,7 @@
             let imgInstance = new fabric.Image(img, {
               left: 0,
               top: 0,
+              target: 1
             })
             canvas.add(imgInstance)
             res()
@@ -103,24 +104,23 @@
         })
       }
       onMounted(() => {
-        canvasInit()
+        canvasInit(0)
       })
       
       const findObject = (x, y) => {
-        console.log(canvas)
-        for(let i=1; i<canvas._objects.length;i++){
-          let element = canvas._objects[i]
+        canvas._objects.forEach(element => {
+          for(let i=1; i<canvas._objects.length;i++){
             if(element.left < x && element.left + element.width > x && element.top < y && element.top + element.height > y && element.target !== -1) {
               const index = element.target
               console.log(element.target,'target')
-              items = json.scenes[index].elements
+              canvas.clear()
               setTimeout(() => {
-                var canvas1 = new fabric.Canvas('canvas')
-                canvasInit(canvas1)
+                canvasInit(index)
               }, 200)
-              canvas.remove(element)
+              // canvas.remove(element)
             }
-        }
+          }
+         }) 
       }
       
       
