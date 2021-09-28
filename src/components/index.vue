@@ -107,19 +107,20 @@
       })
       
       const findObject = (x, y) => {
-        canvas._objects.forEach(element => {
-          if(element.left < x && element.left + element.width > x && element.top < y && element.top + element.height > y && element.target !== -1) {
-            const index = element.target
-            console.log(element.target,'target')
-            // items = json.scenes[index].elements
-            canvas.clear()
-            setTimeout(() => {
-              var canvas1 = new fabric.Canvas('canvas')
-              canvasInit(canvas1)
-            }, 200)
-            // canvas.remove(element) 删除单个元素
+        console.log(canvas)
+        for(let i=1; i<canvas._objects.length;i++){
+          let element = canvas._objects[i]
+            if(element.left < x && element.left + element.width > x && element.top < y && element.top + element.height > y && element.target !== -1) {
+              const index = element.target
+              console.log(element.target,'target')
+              items = json.scenes[index].elements
+              setTimeout(() => {
+                var canvas1 = new fabric.Canvas('canvas')
+                canvasInit(canvas1)
+              }, 200)
+              canvas.remove(element)
+            }
         }
-      })
       }
       
       
