@@ -108,8 +108,9 @@
       })
       
       const findObject = (x, y) => {
-        canvas._objects.forEach(element => {
-          for(let i=1; i<canvas._objects.length;i++){
+        let objArr = canvas.getObjects()
+          for(let i=1; i<objArr.length;i++){
+            let element = objArr[i]
             if(element.left < x && element.left + element.width > x && element.top < y && element.top + element.height > y && element.target !== -1) {
               const index = element.target
               console.log(element.target,'target')
@@ -120,7 +121,6 @@
               // canvas.remove(element)
             }
           }
-         }) 
       }
       
       
