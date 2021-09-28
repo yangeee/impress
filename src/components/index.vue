@@ -93,19 +93,15 @@
           if(element.left < x && element.left + element.width > x && element.top < y && element.top + element.height > y && element.target != -1) {
             const index = element.target
             items = json.scenes[index].elements
-            
             canvas.clear()
             setTimeout(() => {
               var canvas1 = new fabric.Canvas('canvas')
               canvasInit(canvas1)
             }, 200)
-            
-                  
+            // canvas.remove(element) 删除单个元素
         }
       })
       }
-      
-      
       return {
         data
       }
